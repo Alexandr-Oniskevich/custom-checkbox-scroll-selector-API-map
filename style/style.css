@@ -1,0 +1,315 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+         url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/fonts/OpenSans-Regular-webfont.woff2") format("woff2"),
+         url("/fonts/OpenSans-Regular-webfont.woff") format("woff");
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #424242;
+  font-family: "Open Sans";
+}
+
+.container {
+  max-width: 1200px;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+/*checkbox*/
+
+.checkbox__item {
+  list-style: none;
+  padding-bottom: 20px;
+}
+
+.checkbox {
+  width: 176px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 250px;
+  margin-right: 30px;
+}
+
+.checkbox__heading {
+  text-align: center;
+  font-size: 18px;
+}
+
+.checkbox__container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+
+}
+
+.checkbox__lable {
+  position: relative;
+  padding-left: 5px;
+  padding-bottom: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.checkbox__value {
+  opacity: 0;
+}
+
+.checkbox__value + span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.checkbox__value + span:hover {
+  border: 1px solid  #CCB26E;
+}
+
+.checkbox__value:focus + span {
+  border: 1px solid  #CCB26E;
+}
+
+.checkbox__value + span::before {
+  content: '';
+  background-image: url('../img/check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.checkbox__value:checked + span::before {
+  opacity: 1;
+
+}
+
+.checkbox__value:checked + span {
+  border: 1px solid  #CCB26E;
+
+}
+
+
+/*select*/
+
+.select {
+  font-size: 14px;
+  margin-right: 30px;
+}
+
+.choices {
+  width: 176px;
+  height: 39px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid transparent;
+}
+
+.choices:focus {
+  border: 1px solid #CCB26E;
+}
+
+.choices .choices__inner {
+ border: none;
+ width: 176px;
+ height: 39px;
+ border-radius: 10px;
+ background: none;
+}
+
+.choices__list--dropdown .is-open {
+  width: 176px;
+  height: 39px;
+  border-radius: 10px;
+  border: 1px solid #CCB26E;
+}
+
+.choices__list {
+  width: 176px;
+  border-radius: 10px;
+}
+
+.choices .choices__list--dropdown {
+  z-index: 1;
+  top: 20px;
+  padding-top: 20px;
+  border: 1px solid #CCB26E;
+  top: 70%;
+  left: 0px;
+  border-top: transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.choices__list .choices__item:hover {
+  cursor: pointer;
+  color: #CCB26E;
+}
+
+
+
+/*map*/
+
+.map__castom {
+  width: 460px;
+  height: 460px;
+  margin-right: 50px;
+}
+
+[class*=ground-pane] {
+  filter: grayscale(1);
+}
+
+/*scroll*/
+
+.scroll {
+  width: 400px;
+  height: 310px;
+  overflow-y: auto;
+  background: #fff;
+  margin-right: 50px;
+  margin-bottom: 200px;
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+.scroll .simplebar-scrollbar::before {
+  background: #CCB26E;
+  opacity: 1;
+  height: 70px;
+  width: 6px;
+}
+
+.simplebar-scrollbar .simplebar-visible:before {
+  opacity: none;
+  transition: none;
+}
+
+.simplebar-visible .simplebar-hover {
+  opacity: 1;
+}
+
+.simplebar-visible {
+  opacity: 1;
+}
+
+.scroll__text {
+  padding: 30px 30px 0 30px;
+}
+
+/*tooltip*/
+
+.tooltip {
+  position: relative;
+  width: 375px;
+  height: 160px;
+  background: #fff;
+  padding: 20px 0px 20px 30px;
+}
+
+.tooltip__text {
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  padding-right: 92px;
+}
+
+.tooltip__marker {
+  position: relative;
+  height: 100%;
+  cursor: pointer;
+  top: 3px;
+}
+
+.tooltip__marker:hover  path {
+  fill: #CCB26E;
+}
+
+.tooltip__popup {
+  opacity: 0;
+  top: 80px;
+  left: 184px;
+  position: absolute;
+  background-image: url('/img/tooltip.svg');
+  background-repeat: no-repeat;
+  width: 163px;
+  height: 38px;
+}
+
+.tooltip__popup__text {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  margin: 0;
+  padding: 8px 15px;
+}
+
+.tooltip__popup-active {
+  opacity: 1;
+  position: absolute;
+  background-image: url('/img/tooltip.svg');
+  background-repeat: no-repeat;
+  width: 163px;
+  height: 38px;
+}
+
+/*form*/
+
+.form__container {
+  width: 440px;
+  background: #000000;
+  border-radius: 10px;
+  padding: 39px 30px;
+}
+
+.form__input {
+  outline: none;
+  width: 380px;
+  height: 60px;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-radius: 10px;
+  background: #fff;
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+.form__btn {
+  width: 192px;
+  height: 60px;
+  background: #FF5C00;
+  border-radius: 10px;
+  color: #fff;
+  border: none;
+  font-family: Roboto;
+  font-size: 20px;
+}
